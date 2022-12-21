@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.6 on linux)" generated="20221220 16:38:54.899" rpa="false" schemaversion="3">
+<suite id="s1" name="neymarJR" source="/home/uros/Desktop/robotframework/neymarJR.robot">
+<test id="s1-t1" name="TC_007 Radio buttons Functionality" line="11">
+<kw name="Set Variable" library="BuiltIn">
+<var>${Application__URL}</var>
+<arg>https://www.google.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 16:38:55.030" level="INFO">${Application__URL} = https://www.google.com</msg>
+<status status="PASS" starttime="20221220 16:38:55.029" endtime="20221220 16:38:55.031"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Browser_Name}</var>
+<arg>Chrome</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221220 16:38:55.032" level="INFO">${Browser_Name} = Chrome</msg>
+<status status="PASS" starttime="20221220 16:38:55.031" endtime="20221220 16:38:55.032"/>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${Application__URL}</arg>
+<arg>${Browser_Name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221220 16:38:55.032" level="INFO">Opening browser 'Chrome' to base url 'https://www.google.com'.</msg>
+<status status="PASS" starttime="20221220 16:38:55.032" endtime="20221220 16:38:57.376"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221220 16:38:57.376" endtime="20221220 16:38:57.480"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>name=q</arg>
+<arg>neymarjr</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221220 16:38:57.481" level="INFO">Typing text 'neymarjr' into text field 'name=q'.</msg>
+<status status="PASS" starttime="20221220 16:38:57.480" endtime="20221220 16:38:57.571"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>name=btnK</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221220 16:38:57.571" endtime="20221220 16:38:57.833"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>name=btnK</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221220 16:38:57.834" level="INFO">Clicking button 'name=btnK'.</msg>
+<status status="PASS" starttime="20221220 16:38:57.833" endtime="20221220 16:38:59.738"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221220 16:39:01.740" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221220 16:38:59.739" endtime="20221220 16:39:01.740"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>xpath=//*[contains(text(),'Change to English')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221220 16:39:01.741" endtime="20221220 16:39:01.778"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=//*[contains(text(),'Change to English')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221220 16:39:01.780" level="INFO">Clicking element 'xpath=//*[contains(text(),'Change to English')]'.</msg>
+<status status="PASS" starttime="20221220 16:39:01.779" endtime="20221220 16:39:03.483"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221220 16:39:05.485" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221220 16:39:03.484" endtime="20221220 16:39:05.486"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath=(//a[@class='B1uW2d ellip PZPZlf'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221220 16:39:05.489" level="INFO">Clicking element 'xpath=(//a[@class='B1uW2d ellip PZPZlf'])[1]'.</msg>
+<status status="PASS" starttime="20221220 16:39:05.487" endtime="20221220 16:39:07.142"/>
+</kw>
+<kw name="Get Title" library="Selenium2Library">
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20221220 16:39:07.146" level="INFO">${title} = Neymar Jr.</msg>
+<status status="PASS" starttime="20221220 16:39:07.142" endtime="20221220 16:39:07.146"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${title}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221220 16:39:07.146" endtime="20221220 16:39:07.147"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${title}</arg>
+<arg>Neymar Jr.</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221220 16:39:07.147" endtime="20221220 16:39:07.147"/>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20221220 16:39:07.161" level="INFO">Page title is 'Neymar Jr.'.</msg>
+<status status="PASS" starttime="20221220 16:39:07.148" endtime="20221220 16:39:07.162"/>
+</kw>
+<status status="PASS" starttime="20221220 16:38:55.029" endtime="20221220 16:39:07.162"/>
+</test>
+<status status="PASS" starttime="20221220 16:38:54.901" endtime="20221220 16:39:07.164"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="neymarJR">neymarJR</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
